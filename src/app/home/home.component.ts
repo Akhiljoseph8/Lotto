@@ -23,10 +23,16 @@ export class HomeComponent implements OnInit {
   constructor(public dataService: DataService, public firestore:Firestore, public router:Router,private datePipe: DatePipe ) { }
   currentDate:any
   lotteries: any
+  paginatedLotteries:any = [];
+  currentPage = 0;
+  itemsPerPage = 16;
+  totalPages = 0;
   async ngOnInit(): Promise<void> {
       this.lotteries=await this.dataService.fetchData()
       this.sortLotteriesByDate()
       this.currentDate = this.datePipe.transform(new Date(), 'dd/MM/yyyy')!;
+      this.totalPages = Math.ceil(this.lotteries.length / this.itemsPerPage);
+    this.updatePagination();
   }
   
 
@@ -53,6 +59,26 @@ goToResult(id: number) {
 
 isNew(drawDate: string): boolean {
   return drawDate === this.currentDate;
+}
+
+updatePagination() {
+  const startIndex = this.currentPage * this.itemsPerPage;
+  const endIndex = startIndex + this.itemsPerPage;
+  this.paginatedLotteries = this.lotteries.slice(startIndex, endIndex);
+}
+
+nextPage() {
+  if (this.currentPage < this.totalPages - 1) {
+    this.currentPage++;
+    this.updatePagination();
+  }
+}
+
+previousPage() {
+  if (this.currentPage > 0) {
+    this.currentPage--;
+    this.updatePagination();
+  }
 }
 
 

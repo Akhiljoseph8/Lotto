@@ -92,4 +92,12 @@
     height: auto;
     cursor: pointer;
   }
+
+  .fixed-toolbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures toolbar stays above other elements */
+   
+  }
   

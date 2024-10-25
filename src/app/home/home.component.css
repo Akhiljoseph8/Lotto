@@ -8,7 +8,6 @@
 }
 .card-header{
   background-color: var(--primary-color);
-    /* background-color: #388e3c; */
     color: white;
     align-items: center;
     justify-content: center;
@@ -38,12 +37,12 @@
     font-weight: bold;
     z-index: 10;
     text-transform: uppercase;
-    left: -22px; /* Adjusted for better positioning */
-    transform: rotate(-45deg); /* Slopes the badge */
-    transform-origin: 0 0; /* Rotates from the top-left corner */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
-    width: 100px; /* Adjust width */
-    text-align: center; /* Center the text */
+    left: -22px; 
+    transform: rotate(-45deg); 
+    transform-origin: 0 0; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
+    width: 100px;
+    text-align: center; 
 }
 
 
@@ -72,8 +71,6 @@
   .download-text {
     font-size: 1.3rem;
     font-weight: 600; 
-    /* color: #185bb5;  */
-    /* color: red; */
     margin-right: 10px;
   }
   
@@ -83,26 +80,34 @@
   }
   
   .playstore-button:hover {
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Hover effect for the button */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
   }
   
   .playstore-image {
-    height: 45px; /* Slightly larger for better visibility */
+    height: 45px; 
   }
   
   @media screen and (max-width: 768px) {
     .download-box {
-      flex-direction: column;
-      padding: 10px 15px; 
+    flex-direction: column;
+   
+    padding: 10px 15px; 
+    position: fixed; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1000; 
+    width: 70%;
     }
   
     .download-text {
-      /* margin-bottom: 10px; */
       font-size: 1rem;
     }
   
     .playstore-image {
-      height: 30px; /* Adjust logo size for smaller screens */
+      height: 30px; 
     }
   }
   
+
+ 
