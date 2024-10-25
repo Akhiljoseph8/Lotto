@@ -1,0 +1,108 @@
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    width: 200px;
+    
+}
+.card-header{
+  background-color: var(--primary-color);
+    /* background-color: #388e3c; */
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+}
+
+.code-box {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff9800; 
+    color: white; 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: bold;
+    font-size: 11px; 
+    z-index: 10; 
+  }
+  .new-badge {
+    position: absolute;
+    top: 50px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 10;
+    text-transform: uppercase;
+    left: -22px; /* Adjusted for better positioning */
+    transform: rotate(-45deg); /* Slopes the badge */
+    transform-origin: 0 0; /* Rotates from the top-left corner */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+    width: 100px; /* Adjust width */
+    text-align: center; /* Center the text */
+}
+
+
+  .card{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  .card-button{
+    color: var(--primary-color);
+  }
+
+  
+  .download-box {
+    padding: 10px 30px;
+    background-color: #e0f7fa; /* Pale Cyan */
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+
+  
+  .download-text {
+    font-size: 1.3rem;
+    font-weight: 600; 
+    /* color: #185bb5;  */
+    /* color: red; */
+    margin-right: 10px;
+  }
+  
+  .playstore-button {
+  
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .playstore-button:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Hover effect for the button */
+  }
+  
+  .playstore-image {
+    height: 45px; /* Slightly larger for better visibility */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .download-box {
+      flex-direction: column;
+      padding: 10px 15px; 
+    }
+  
+    .download-text {
+      /* margin-bottom: 10px; */
+      font-size: 1rem;
+    }
+  
+    .playstore-image {
+      height: 30px; /* Adjust logo size for smaller screens */
+    }
+  }
+  

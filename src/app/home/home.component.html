@@ -1,0 +1,46 @@
+
+<div class="content" fxLayout="column" fxLayoutAlign="center center" >
+<!-- Download Section -->
+ 
+<div fxLayout="row" fxFlex="100%" class="download-section">
+  <div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center" fxLayoutGap="16px" class="download-box">
+    <span class="download-text">Download Now</span>
+    <a href="https://play.google.com/store/apps/details?id=com.LapofyApps.kll"  class="playstore-button">
+      <img src="assets/playstore_logo.png" alt="Get it on Google Play" class="playstore-image" />
+    </a>
+  </div>
+</div>
+
+
+
+<div class="content" fxLayout="row" fxLayoutAlign="center center" >
+
+  <div fxFlex="80%" fxFlex.gt-md="70%">
+
+    <div fxLayout="row wrap" fxLayoutGap="16px grid" >
+      <div 
+        fxFlex="25%"
+        fxFlex.xs="100%"
+        fxFlex.md="33%"
+        fxFlex.sm="50%"
+        *ngFor="let i of lotteries"
+      >
+        <mat-card class="mat-elevation-z4 card">
+          <mat-card-header  class="card-header">
+            <div *ngIf="isNew(i.draw_date)" class="new-badge">NEW</div>
+            <div class="code-box">{{i.id}}</div> 
+            <mat-card-title>{{i.lottery_name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-date"  fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-card-title>{{i.draw_date}}</mat-card-title>
+            <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+              <button (click)="goToResult(i.id)" class="card-button"  mat-button>Results</button>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</div>
